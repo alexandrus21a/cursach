@@ -1,4 +1,4 @@
-package com.codersgang.cursach_project;
+package com.codersgang.cg;
 
 import androidx.appcompat.app.AppCompatActivity;
 
