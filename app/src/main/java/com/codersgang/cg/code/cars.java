@@ -85,4 +85,10 @@ public class cars {
     public void setCountry_of_origin(String country_of_origin) {
         this.Country_of_origin = country_of_origin;
     }
+    public int getYear() {
+        return Year;
+    }
+    public void setYear(int year){
+        this.Year = year;
+    }
 }
