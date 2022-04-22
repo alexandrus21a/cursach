@@ -33,4 +33,53 @@ public class cars {
         this.Body_type = body_type;
         this.Fuel_type = fuel_type;
     }
+
+    public long car_id() {
+        return car_id;
+    }
+
+    public void setCar_id(long id) {
+        this.car_id = id;
+    }
+
+    public String getVendor() {
+        return Vendor;
+    }
+
+    public void setVendor(String vendor) {
+        this.Vendor = vendor;
+    }
+
+    public String getModel() {
+        return Model;
+    }
+
+    public void setModel(String model) {
+        this.Model = model;
+    }
+
+    public String getBody() {
+        return Body_type;
+    }
+
+    public void setBody_type(String body_type) {
+        this.Body_type = body_type;
+    }
+
+    public String getColor() {
+        return Color;
+    }
+    public void setColor(String Color){
+        this.Color = Color;
+    }
+    public String Fuel_type(){
+        return Fuel_type;
+    }
+    public void setFuel_type(String Fuel_type){
+        this.Fuel_type = Fuel_type;
+    }
+    public String Drive_type(){
+        return Drive_type;
+    }
+
 }
