@@ -91,4 +91,8 @@ public class cars {
     public void setYear(int year){
         this.Year = year;
     }
+    @Override
+    public String toString() {
+        return "#"+car_id+"'%-3s'"+Vendor+"'%-3s'-"+Model+"'%-3s'"+Color;
+    }
 }
