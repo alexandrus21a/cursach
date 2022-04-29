@@ -10,8 +10,8 @@ public class cars {
     private String Drive_type;
     private String Type_of_gearbox;
     private String Country_of_origin;
-    private Integer Cost;
-    private int Year;
+    private String Cost;
+    private String Year;
 
     public cars() {
         super();
@@ -77,25 +77,21 @@ public class cars {
     public String getType_of_gearbox() {
         return Type_of_gearbox;
     }
-    public void setType_of_gearbox(String type_of_gearbox) {
-        this.Type_of_gearbox = type_of_gearbox;
-    }
+    public void setType_of_gearbox(String type_of_gearbox) { this.Type_of_gearbox = type_of_gearbox; }
     public String getCountry_of_origin() {
         return Country_of_origin;
     }
-    public void setCountry_of_origin(String country_of_origin) {
-        this.Country_of_origin = country_of_origin;
-    }
-    public int getYear() {
+    public void setCountry_of_origin(String country_of_origin) { this.Country_of_origin = country_of_origin; }
+    public String getYear() {
         return Year;
     }
-    public void setYear(int year){
+    public void setYear(String year){
         this.Year = year;
     }
-    public int getPrice(){
+    public String getPrice(){
         return Cost;
     }
-    public void setPrice(int cost){
+    public void setPrice(String cost){
         this.Cost = cost;
     }
     @Override
