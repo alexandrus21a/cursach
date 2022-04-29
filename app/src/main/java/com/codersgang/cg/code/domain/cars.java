@@ -1,4 +1,4 @@
-package com.codersgang.cg.code;
+package com.codersgang.cg.code.domain;
 
 public class cars {
     private long car_id;
@@ -10,6 +10,7 @@ public class cars {
     private String Drive_type;
     private String Type_of_gearbox;
     private String Country_of_origin;
+    private Integer Cost;
     private int Year;
 
     public cars() {
@@ -90,6 +91,12 @@ public class cars {
     }
     public void setYear(int year){
         this.Year = year;
+    }
+    public int getPrice(){
+        return Cost;
+    }
+    public void setPrice(int cost){
+        this.Cost = cost;
     }
     @Override
     public String toString() {
