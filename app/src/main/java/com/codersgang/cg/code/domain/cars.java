@@ -32,6 +32,7 @@ public class cars {
         this.Body_type = body_type;
         this.Fuel_type = fuel_type;
     }
+
     public long car_id() {
         return car_id;
     }

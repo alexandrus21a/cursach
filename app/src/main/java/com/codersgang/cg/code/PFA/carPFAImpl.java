@@ -11,7 +11,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class carPFAImpl implements carPFA {
+public class carPFAImpl implements carPFA {
     @Override
     public cars getcarbyid(long car_id) {
         try (Connection connection = conn.connect("jdbc:mysql://bxbeira3epme6fr6hvnr-mysql.services.clever-cloud.com", "uuintsqhtq0ys6z3", "bRg0ti2GrMEl0kAyYqU3");
@@ -45,7 +45,7 @@ public abstract class carPFAImpl implements carPFA {
         return null;
     }
 
-    @Override
+
     public List<cars> allcars() {
         try (Connection connection = conn.connect("jdbc:mysql://bxbeira3epme6fr6hvnr-mysql.services.clever-cloud.com", "uuintsqhtq0ys6z3", "bRg0ti2GrMEl0kAyYqU3");
              Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery("SELECT * FROM avto1");) {
