@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">CG</string>
+    <string name="welcometext1">Find ideal</string>
+    <string name="welcometext2">car</string>
+    <string name="welcometext3">for you</string>
+    <string name="textabovebtn">Great car - great price</string>
+    <string name="welcomebtn">Get started</string>
+    <string name="skip">пропустити реєстрацію</string>
+    <string name="filterheader">Підбір автомобіля</string>
+    <string name="filtercost">Ціна, $</string>
+    <string name="filtervendor">Марка</string>
+    <string name="filtercolor">Колір</string>
+    <string name="buybtn">Buy</string>
+    <string name="applybtn">Apply</string>
 </resources>
