@@ -1,60 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp" >
 
     <ImageView
-            android:id="@+id/imageView_flag"
-            android:layout_width="222dp"
-            android:layout_height="108dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@raw/img_1"
-            tools:ignore="VectorDrawableCompat"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.442"
-            app:layout_constraintVertical_bias="0.517"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_gravity="center"/>
+        android:id="@+id/imageView_flag"
+        android:layout_width="179dp"
+        android:layout_height="81dp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.442"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.517"
+        app:srcCompat="@raw/img_1"
+        tools:ignore="VectorDrawableCompat" />
 
+    <EditText
+        android:id="@+id/carlist_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="ID" >
+
+        <requestFocus/>
+    </EditText>
     <EditText
         android:id="@+id/subject_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/enter_name" >
-
-        <requestFocus/>
-    </EditText>
-    <EditText
-            android:id="@+id/description_edittext"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="@string/enter_name" >
     </EditText>
     <EditText
         android:id="@+id/description_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/enter_desc"
-        android:inputType="textMultiLine"
-        android:minLines="5" >
+        android:hint="@string/enter_desc" >
     </EditText>
     <EditText
-            android:id="@+id/carlist_id"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="id"
-            android:inputType="textMultiLine"
-            android:minLines="5" >
+        android:id="@+id/color1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Color" >
     </EditText>
+    <EditText
+        android:id="@+id/Body_type1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Body Type" >
+    </EditText>
+    <EditText
+        android:id="@+id/Country_of_origin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Country of origin" >
+    </EditText>
+    <EditText
+        android:id="@+id/Drive_type1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Drive type" >
+    </EditText>
+    <EditText
+        android:id="@+id/Fuel_type1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Fuel type" >
+    </EditText>
+    <EditText
+        android:id="@+id/Type_of_gearbox1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Type of gearbox" >
+    </EditText>
+    <EditText
+        android:id="@+id/Year1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Year" >
+    </EditText>
+    <EditText
+        android:id="@+id/Cost1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Cost" >
+    </EditText>
+
     <Button
         android:id="@+id/add_record"
         android:layout_width="wrap_content"

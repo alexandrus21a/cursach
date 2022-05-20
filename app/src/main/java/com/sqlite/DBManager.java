@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.sql.DriverManager;
 
 
 public class DBManager {
@@ -29,16 +30,24 @@ public class DBManager {
         dbHelper.close();
     }
 
-    public void insert(String id, String name, String desc) {
+    public void insert(String id, String name, String desc, String txtcolor, String txtbodytype, String txtcountry, String txtdrive, String txtfuel, String txtgearbox, String txtyear, String txtcost) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.CAR_ID, id);
         contentValue.put(DatabaseHelper.VENDOR, name);
         contentValue.put(DatabaseHelper.MODEL, desc);
+        contentValue.put(DatabaseHelper.COLOR, txtcolor);
+        contentValue.put(DatabaseHelper.BODY_TYPE, txtbodytype);
+        contentValue.put(DatabaseHelper.COUNTRY_OF_ORIGIN,txtcountry );
+        contentValue.put(DatabaseHelper.DRIVE_TYPE, txtdrive);
+        contentValue.put(DatabaseHelper.FUEL_TYPE, txtfuel);
+        contentValue.put(DatabaseHelper.TYPE_OF_GEARBOX, txtgearbox);
+        contentValue.put(DatabaseHelper.YEAR, txtyear);
+        contentValue.put(DatabaseHelper.COST, txtcost);
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
     }
 
-    public Cursor fetch() {
-        String[] columns = new String[] { DatabaseHelper.CAR_ID, DatabaseHelper.VENDOR, DatabaseHelper.MODEL, DatabaseHelper.COLOR };
+    public Cursor fetch() {/*Записать а*/
+        String[] columns = new String[] { DatabaseHelper.CAR_ID, DatabaseHelper.VENDOR, DatabaseHelper.MODEL, DatabaseHelper.COLOR, DatabaseHelper.FUEL_TYPE, DatabaseHelper.YEAR};
         Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -46,11 +55,13 @@ public class DBManager {
         return cursor;
     }
 
-    public int update(long _id, String name, String desc, String txtcolor) {
+    public int update(long _id, String desc, String txtcolor, String txtfuel, String txtyear, String txtcost) {
         ContentValues contentValues = new ContentValues();
-        contentValues.put(DatabaseHelper.VENDOR, name);
         contentValues.put(DatabaseHelper.MODEL, desc);
         contentValues.put(DatabaseHelper.COLOR, txtcolor);
+        contentValues.put(DatabaseHelper.FUEL_TYPE, txtfuel);
+        contentValues.put(DatabaseHelper.YEAR, txtyear);
+        contentValues.put(DatabaseHelper.COST, txtcost);
         int i = database.update(DatabaseHelper.TABLE_NAME, contentValues, DatabaseHelper.CAR_ID + " = " + _id, null);
         return i;
     }

@@ -19,4 +19,5 @@
     <string name="empty_list_text">No records found</string>
     <string name="enter_desc">Model</string>
     <string name="enter_title">Country</string>
+
 </resources>

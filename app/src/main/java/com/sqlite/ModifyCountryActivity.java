@@ -14,9 +14,9 @@ import android.widget.EditText;
 
 public class ModifyCountryActivity extends Activity implements OnClickListener {
 
-    private EditText titleText;
+    private EditText descText, colorText, fuelText, yearText, costText;
     private Button updateBtn, deleteBtn;
-    private EditText descText, colortext;
+
 
     private long _id;
 
@@ -33,20 +33,29 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
         dbManager = new DBManager(this);
         dbManager.open();
 
-        titleText = (EditText) findViewById(R.id.subject_edittext);
         descText = (EditText) findViewById(R.id.description_edittext);
         updateBtn = (Button) findViewById(R.id.btn_update);
         deleteBtn = (Button) findViewById(R.id.btn_delete);
+        colorText =(EditText) findViewById(R.id.color1);
+        fuelText =(EditText) findViewById(R.id.Fuel_type1);
+        yearText =(EditText) findViewById(R.id.Year1);
+        costText =(EditText) findViewById(R.id.Cost1);
 
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
-        String name = intent.getStringExtra("title");
         String desc = intent.getStringExtra("desc");
+        String txtcolor = intent.getStringExtra("txtcolor");
+        String txtfuel = intent.getStringExtra("txtfuel");
+        String txtyear = intent.getStringExtra("txtyear");
+        String txtcost = intent.getStringExtra("txtcost");
 
         _id = Long.parseLong(id);
 
-        titleText.setText(name);
         descText.setText(desc);
+        colorText.setText(txtcolor);
+        fuelText.setText(txtfuel);
+        yearText.setText(txtyear);
+        costText.setText(txtcost);
 
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
@@ -56,11 +65,13 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.btn_update:
-                String title = titleText.getText().toString();
                 String desc = descText.getText().toString();
-                String txtcolor = colortext.getText().toString();
+                String txtcolor = colorText.getText().toString();
+                String txtfuel = fuelText.getText().toString();
+                String txtyear = yearText.getText().toString();
+                String txtcost = costText.getText().toString();
 
-                dbManager.update(_id, title, desc, txtcolor);
+                dbManager.update(_id, desc, txtcolor, txtfuel, txtyear, txtcost);
                 this.returnHome();
                 break;
 

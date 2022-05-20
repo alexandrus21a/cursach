@@ -16,25 +16,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String VENDOR = "Vendor";
     public static final String MODEL = "Model";
     public static final String COLOR = "Color";
-    public static final String BODY_TYPE = "Body type";
-    public static final String FUEL_TYPE = "Fuel type";
-    public static final String DRIVE_TYPE = "Drive type";
-    public static final String TYPE_OF_GEARBOX = "Type of gearbox";
-    public static final String COUNTRY_OF_ORIGIN = "Country of origin";
+    public static final String BODY_TYPE = "Body";
+    public static final String FUEL_TYPE = "Fuel";
+    public static final String DRIVE_TYPE = "Drive";
+    public static final String TYPE_OF_GEARBOX = "Type";
+    public static final String COUNTRY_OF_ORIGIN = "Country";
     public static final String YEAR = "Year";
     public static final String COST = "Cost";
 
 
 
     // Database Information
-    static final String DB_NAME = "avto.sql";
+    static final String DB_NAME = "avto.db";
 
     // database version
     static final int DB_VERSION = 1;
 
 
 
-    private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + CAR_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + VENDOR + " varchar(255) NOT NULL, " + MODEL + " varchar(255) NOT NULL, " + COLOR + " varchar(255) NOT NULL, " + BODY_TYPE + " varchar(255) NOT NULL, " + FUEL_TYPE + " varchar(255) NOT NULL, " + DRIVE_TYPE + " varchar(255) NOT NULL, " + TYPE_OF_GEARBOX + " varchar(255) NOT NULL, " + COUNTRY_OF_ORIGIN + " varchar(255) NOT NULL, " + YEAR + " year(4) NOT NULL, " + COST + " int(11) );";
+    private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + CAR_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + VENDOR + " varchar(255), " + MODEL + " varchar(255), " + COLOR + " varchar(255), " + BODY_TYPE + " varchar(255), " + FUEL_TYPE + " varchar(255), " + DRIVE_TYPE + " varchar(255), " + TYPE_OF_GEARBOX + " varchar(255), " + COUNTRY_OF_ORIGIN + " varchar(255), " + YEAR + " year(4),  " + COST + " int(11) );";
 
 
     public DatabaseHelper(Context context) {
