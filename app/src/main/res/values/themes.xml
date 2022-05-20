@@ -6,7 +6,7 @@
         <item name="colorPrimaryVariant">#F49817</item>
         <item name="colorOnPrimary">#fff</item>
         <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/primarybasic</item>
         <!-- Customize your theme here. -->
     </style>
     <style name="SplashScreen" parent="Theme.AppCompat.Light.NoActionBar">

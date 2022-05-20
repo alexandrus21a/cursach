@@ -48,20 +48,20 @@ public class CountryListActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
-                TextView idTextView = (TextView) view.findViewById(R.id.id);
-                TextView titleTextView = (TextView) view.findViewById(R.id.title);
-                TextView descTextView = (TextView) view.findViewById(R.id.desc);
+                TextView idTextView = (TextView) view.findViewById(R.string.app_name+R.id.id);
+                TextView titleTextView = (TextView) view.findViewById(R.string.app_name+R.id.title);
+                TextView descTextView = (TextView) view.findViewById(R.string.app_name+R.id.desc);
                 TextView Colortxt = (TextView) view.findViewById(R.id.txtcolor);
                 TextView fueltext = (TextView) view.findViewById(R.id.txtfuel);
-                TextView yeartext = (TextView) view.findViewById(R.id.txtxyear);
+                TextView yeartext =(TextView) view.findViewById(R.id.txtxyear);
 
 
                 String id = idTextView.getText().toString();
-                String title = titleTextView.getText().toString();
-                String desc = descTextView.getText().toString();
-                String txtcolor = Colortxt.getText().toString();
-                String txtfuel = fueltext.getText().toString();
-                String txtxyear = yeartext.getText().toString();
+                String title ="Vendor:"+ titleTextView.getText().toString();
+                String desc = "Vendor:"+descTextView.getText().toString();
+                String txtcolor ="Color:" +Colortxt.getText().toString();
+                String txtfuel = "Fuel:"+fueltext.getText().toString();
+                String txtxyear ="Year:"+ yeartext.getText().toString();
 
 
                 Intent modify_intent = new Intent(getApplicationContext(), ModifyCountryActivity.class);
