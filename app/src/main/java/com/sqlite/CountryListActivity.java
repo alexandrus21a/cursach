@@ -1,5 +1,4 @@
 package com.sqlite;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
-import com.sqlite.R;
 
 public class CountryListActivity extends AppCompatActivity {
 
@@ -23,10 +21,9 @@ public class CountryListActivity extends AppCompatActivity {
 
     private SimpleCursorAdapter adapter;
 
-    final String[] from = new String[]{DatabaseHelper._ID,
-            DatabaseHelper.SUBJECT, DatabaseHelper.DESC};
+    final String[] from = new String[]{DatabaseHelper.CAR_ID, DatabaseHelper.VENDOR, DatabaseHelper.MODEL, DatabaseHelper.COLOR};
 
-    final int[] to = new int[]{R.id.id, R.id.title, R.id.desc};
+    final int[] to = new int[]{R.id.id, R.id.title, R.id.desc, R.id.txtcolor};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,15 +50,18 @@ public class CountryListActivity extends AppCompatActivity {
                 TextView idTextView = (TextView) view.findViewById(R.id.id);
                 TextView titleTextView = (TextView) view.findViewById(R.id.title);
                 TextView descTextView = (TextView) view.findViewById(R.id.desc);
+                TextView Colortxt = (TextView) view.findViewById(R.id.txtcolor);
 
                 String id = idTextView.getText().toString();
                 String title = titleTextView.getText().toString();
                 String desc = descTextView.getText().toString();
+                String txtcolor = Colortxt.getText().toString();
 
                 Intent modify_intent = new Intent(getApplicationContext(), ModifyCountryActivity.class);
                 modify_intent.putExtra("title", title);
                 modify_intent.putExtra("desc", desc);
                 modify_intent.putExtra("id", id);
+                modify_intent.putExtra("txtcolor", txtcolor);
 
                 startActivity(modify_intent);
             }

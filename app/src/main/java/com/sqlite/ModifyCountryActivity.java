@@ -12,13 +12,11 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.sqlite.R;
-
 public class ModifyCountryActivity extends Activity implements OnClickListener {
 
     private EditText titleText;
     private Button updateBtn, deleteBtn;
-    private EditText descText;
+    private EditText descText, colortext;
 
     private long _id;
 
@@ -37,7 +35,6 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
 
         titleText = (EditText) findViewById(R.id.subject_edittext);
         descText = (EditText) findViewById(R.id.description_edittext);
-
         updateBtn = (Button) findViewById(R.id.btn_update);
         deleteBtn = (Button) findViewById(R.id.btn_delete);
 
@@ -61,8 +58,9 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
             case R.id.btn_update:
                 String title = titleText.getText().toString();
                 String desc = descText.getText().toString();
+                String txtcolor = colortext.getText().toString();
 
-                dbManager.update(_id, title, desc);
+                dbManager.update(_id, title, desc, txtcolor);
                 this.returnHome();
                 break;
 

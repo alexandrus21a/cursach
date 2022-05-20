@@ -1,9 +1,4 @@
 package com.sqlite;
-
-/**
- * Created by anupamchugh on 19/10/15.
- */
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,12 +6,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import com.sqlite.R.*;
+
+
+
 public class AddCountryActivity extends Activity implements OnClickListener {
 
     private Button addTodoBtn;
-    private EditText subjectEditText;
-    private EditText descEditText;
+    private EditText subjectEditText, descEditText, carid;
 
     private DBManager dbManager;
 
@@ -26,12 +22,12 @@ public class AddCountryActivity extends Activity implements OnClickListener {
 
         setTitle("Add Record");
 
-        setContentView(layout.activity_add_record);
+        setContentView(R.layout.activity_add_record);
+        carid = (EditText) findViewById(R.id.carlist_id);
+        subjectEditText = (EditText) findViewById(R.id.subject_edittext);
+        descEditText = (EditText) findViewById(R.id.description_edittext);
 
-        subjectEditText = (EditText) findViewById(id.subject_edittext);
-        descEditText = (EditText) findViewById(id.description_edittext);
-
-        addTodoBtn = (Button) findViewById(id.add_record);
+        addTodoBtn = (Button) findViewById(R.id.add_record);
 
         dbManager = new DBManager(this);
         dbManager.open();
@@ -41,12 +37,13 @@ public class AddCountryActivity extends Activity implements OnClickListener {
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case id.add_record:
+            case R.id.add_record:
 
+                final String id = carid.getText().toString();
                 final String name = subjectEditText.getText().toString();
                 final String desc = descEditText.getText().toString();
 
-                dbManager.insert(name, desc);
+                dbManager.insert(id, name, desc);
 
                 Intent main = new Intent(AddCountryActivity.this, CountryListActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
