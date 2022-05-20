@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">CG</string>
+    <string name="app_name">AutoHub</string>
     <string name="welcometext1">Find ideal</string>
     <string name="welcometext2">car</string>
     <string name="welcometext3">for you</string>
@@ -13,7 +13,7 @@
     <string name="buybtn">Buy</string>
     <string name="applybtn">Apply</string>
     <string name="enter_name">Vendor</string>
-    <string name="add_record">add</string>
+    <string name="add_record">Add</string>
     <string name="btn_update">Update</string>
     <string name="btn_delete">Delete</string>
     <string name="empty_list_text">No records found</string>

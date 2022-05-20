@@ -25,44 +25,59 @@
     <EditText
         android:id="@+id/description_edittext"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/shape"
         android:ems="10"
-        android:hint="@string/enter_desc" >
-    </EditText>
+        android:hint="@string/enter_desc"
+        android:textColor="@color/colortext"
+        android:textColorHint="@color/colortext">></EditText>
+
     <EditText
         android:id="@+id/color1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/shape"
         android:ems="10"
-        android:hint="Color" >
-    </EditText>
+        android:hint="Color"
+        android:textColor="@color/colortext"
+        android:textColorHint="@color/colortext">></EditText>
     <EditText
         android:id="@+id/Fuel_type1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:ems="10"
-        android:hint="Fuel type" >
+        android:hint="Fuel type"
+        android:textColor="@color/colortext"
+        android:textColorHint="@color/colortext"
+        android:background="@drawable/shape">>
     </EditText>
     <EditText
         android:id="@+id/Year1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:ems="10"
-        android:hint="Year" >
+        android:hint="Year"
+        android:textColor="@color/colortext"
+        android:textColorHint="@color/colortext"
+        android:background="@drawable/shape">>
     </EditText>
     <EditText
         android:id="@+id/Cost1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:ems="10"
-        android:hint="Cost" >
+        android:hint="Cost"
+        android:textColor="@color/colortext"
+        android:textColorHint="@color/colortext"
+        android:background="@drawable/shape">>
     </EditText>
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:weightSum="2"
         android:gravity="center_horizontal"
-        android:orientation="horizontal" >
+        android:orientation="horizontal"
+        >
 
         <Button
             android:id="@+id/btn_update"

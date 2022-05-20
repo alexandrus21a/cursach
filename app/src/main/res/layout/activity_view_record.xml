@@ -2,7 +2,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/card_view"
+        android:id="@+id/card_viewthis"
         android:layout_width="348.26sp"
         android:layout_height="186sp"
         android:layout_marginTop="92dp"
@@ -13,14 +13,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
+        android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
         android:gravity="center">
-
-    <Button
-            android:text=""
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:alpha="0"
-            android:id="@+id/cardbtn" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -117,6 +112,22 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView_flag" />
+
+        <Button
+            android:id="@+id/cardbtn"
+
+            android:layout_width="104dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="4dp"
+            android:alpha="0.7"
+            android:backgroundTint="@color/primarycol"
+            android:text="Edit"
+            app:layout_constraintBottom_toTopOf="@+id/id"
+            app:layout_constraintEnd_toEndOf="@+id/txtxyear"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txtxyear"
+            app:layout_constraintTop_toBottomOf="@+id/txtxyear"
+            app:layout_constraintVertical_bias="0.222" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

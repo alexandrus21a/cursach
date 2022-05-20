@@ -23,7 +23,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.CountryListActivity);
+                setContentView(R.layout.activity_view_record);
             }
         });
 
@@ -32,7 +32,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                setContentView(R.layout.CountryListActivity);
+                setContentView(R.layout.activity_view_record);
             }
         });
 

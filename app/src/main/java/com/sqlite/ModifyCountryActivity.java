@@ -11,11 +11,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+import androidx.cardview.widget.CardView;
 
 public class ModifyCountryActivity extends Activity implements OnClickListener {
 
     private EditText descText, colorText, fuelText, yearText, costText;
-    private Button updateBtn, deleteBtn;
+    private Button updateBtn, deleteBtn, cardsbtn;
+
 
 
     private long _id;
@@ -25,6 +28,13 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        cardsbtn.findViewById(R.id.cardbtn);
+        cardsbtn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                setContentView(R.layout.activity_modify_record);
+            }
+        });
 
         setTitle("Modify Record");
 
