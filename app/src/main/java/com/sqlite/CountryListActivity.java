@@ -22,7 +22,7 @@ public class CountryListActivity extends AppCompatActivity {
 
     private SimpleCursorAdapter adapter;
 
-    final String[] from = new String[]{DatabaseHelper.CAR_ID, DatabaseHelper.VENDOR, DatabaseHelper.MODEL, DatabaseHelper.COLOR};
+    final String[] from = new String[]{DatabaseHelper.CAR_ID, DatabaseHelper.VENDOR, DatabaseHelper.MODEL, DatabaseHelper.COLOR, DatabaseHelper.FUEL_TYPE, DatabaseHelper.YEAR};
 
     final int[] to = new int[]{R.id.id, R.id.title, R.id.desc, R.id.txtcolor, R.id.txtfuel, R.id.txtxyear};
 
@@ -54,12 +54,16 @@ public class CountryListActivity extends AppCompatActivity {
                 TextView Colortxt = (TextView) view.findViewById(R.id.txtcolor);
                 TextView fueltext = (TextView) view.findViewById(R.id.txtfuel);
                 TextView yeartext = (TextView) view.findViewById(R.id.txtxyear);
+
+
                 String id = idTextView.getText().toString();
                 String title = titleTextView.getText().toString();
                 String desc = descTextView.getText().toString();
                 String txtcolor = Colortxt.getText().toString();
                 String txtfuel = fueltext.getText().toString();
                 String txtxyear = yeartext.getText().toString();
+
+
                 Intent modify_intent = new Intent(getApplicationContext(), ModifyCountryActivity.class);
                 modify_intent.putExtra("title", title);
                 modify_intent.putExtra("desc", desc);

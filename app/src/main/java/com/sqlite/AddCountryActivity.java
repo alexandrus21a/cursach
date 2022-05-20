@@ -12,7 +12,7 @@ import android.widget.EditText;
 public class AddCountryActivity extends Activity implements OnClickListener {
 
     private Button addTodoBtn;
-    private EditText subjectEditText, descEditText, carid, colorEdit, bodytypeEdit, countryEdit, driveEdit, fuelEdit, gearboxEdit, yearEdit, costEdit;
+    private EditText subjectEditText, descEditText, colorEdit, bodytypeEdit, countryEdit, driveEdit, fuelEdit, gearboxEdit, yearEdit, costEdit;
 
     private DBManager dbManager;
 
@@ -23,7 +23,6 @@ public class AddCountryActivity extends Activity implements OnClickListener {
         setTitle("Add Record");
 
         setContentView(R.layout.activity_add_record);
-        carid = (EditText) findViewById(R.id.carlist_id);
         subjectEditText = (EditText) findViewById(R.id.subject_edittext);
         descEditText = (EditText) findViewById(R.id.description_edittext);
         colorEdit = (EditText) findViewById(R.id.color1);
@@ -46,8 +45,6 @@ public class AddCountryActivity extends Activity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.add_record:
-
-                final String id = carid.getText().toString();
                 final String name = subjectEditText.getText().toString();
                 final String desc = descEditText.getText().toString();
                 final String txtcolor =colorEdit.getText().toString();
@@ -58,7 +55,7 @@ public class AddCountryActivity extends Activity implements OnClickListener {
                 final String txtgearbox =gearboxEdit.getText().toString();
                 final String txtyear =yearEdit.getText().toString();
                 final String txtcost =costEdit.getText().toString();
-                dbManager.insert(id, name, desc, txtcolor, txtbodytype, txtcountry, txtdrive, txtfuel, txtgearbox, txtyear, txtcost);
+                dbManager.insert( name, desc, txtcolor, txtbodytype, txtcountry, txtdrive, txtfuel, txtgearbox, txtyear, txtcost);
 
                 Intent main = new Intent(AddCountryActivity.this, CountryListActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

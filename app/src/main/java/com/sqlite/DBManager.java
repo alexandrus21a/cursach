@@ -5,8 +5,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import java.sql.DriverManager;
-
 
 public class DBManager {
 
@@ -30,9 +28,8 @@ public class DBManager {
         dbHelper.close();
     }
 
-    public void insert(String id, String name, String desc, String txtcolor, String txtbodytype, String txtcountry, String txtdrive, String txtfuel, String txtgearbox, String txtyear, String txtcost) {
+    public void insert(String name, String desc, String txtcolor, String txtbodytype, String txtcountry, String txtdrive, String txtfuel, String txtgearbox, String txtyear, String txtcost) {
         ContentValues contentValue = new ContentValues();
-        contentValue.put(DatabaseHelper.CAR_ID, id);
         contentValue.put(DatabaseHelper.VENDOR, name);
         contentValue.put(DatabaseHelper.MODEL, desc);
         contentValue.put(DatabaseHelper.COLOR, txtcolor);
