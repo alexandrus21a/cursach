@@ -23,11 +23,8 @@ public class WelcomeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-<<<<<<< Updated upstream
-                setContentView(R.layout.activity_view_record);
-=======
+
                 startActivity(new Intent(v.getContext(), CountryListActivity.class));
->>>>>>> Stashed changes
             }
         });
 
@@ -36,11 +33,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-<<<<<<< Updated upstream
-                setContentView(R.layout.activity_view_record);
-=======
                 startActivity(new Intent(v.getContext(), CountryListActivity.class));
->>>>>>> Stashed changes
             }
         });
 

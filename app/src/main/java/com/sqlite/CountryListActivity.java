@@ -7,11 +7,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cursoradapter.widget.SimpleCursorAdapter;
+
 
 
 public class CountryListActivity extends AppCompatActivity {
@@ -22,15 +24,16 @@ public class CountryListActivity extends AppCompatActivity {
     private ListView listView;
 
     private SimpleCursorAdapter adapter;
+    private Button cardsbtn;
 
     final String[] from = new String[]{DatabaseHelper.CAR_ID, DatabaseHelper.VENDOR, DatabaseHelper.MODEL, DatabaseHelper.COLOR, DatabaseHelper.FUEL_TYPE, DatabaseHelper.YEAR};
 
     final int[] to = new int[]{R.id.id, R.id.title, R.id.desc, R.id.txtcolor, R.id.txtfuel, R.id.txtxyear};
+    private View v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.fragment_emp_list);
 
         dbManager = new DBManager(this);
@@ -44,14 +47,13 @@ public class CountryListActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
 
         listView.setAdapter(adapter);
-
         // OnCLickListiner For List Items
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
-                TextView idTextView = (TextView) view.findViewById(R.string.app_name+R.id.id);
-                TextView titleTextView = (TextView) view.findViewById(R.string.app_name+R.id.title);
-                TextView descTextView = (TextView) view.findViewById(R.string.app_name+R.id.desc);
+                TextView idTextView = (TextView) view.findViewById(R.id.id);
+                TextView titleTextView = (TextView) view.findViewById(R.id.title);
+                TextView descTextView = (TextView) view.findViewById(R.id.desc);
                 TextView Colortxt = (TextView) view.findViewById(R.id.txtcolor);
                 TextView fueltext = (TextView) view.findViewById(R.id.txtfuel);
                 TextView yeartext =(TextView) view.findViewById(R.id.txtxyear);
@@ -75,14 +77,20 @@ public class CountryListActivity extends AppCompatActivity {
                 startActivity(modify_intent);
             }
         });
+        /*findViewById(R.id.cardviewthis).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ModifyCountryActivity.class));
+            }
+        });*/
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -91,8 +99,10 @@ public class CountryListActivity extends AppCompatActivity {
 
             Intent add_mem = new Intent(this, AddCountryActivity.class);
             startActivity(add_mem);
-
-        }
+        }/*if (id == R.id.cardbtn){
+            Intent add_mem = new Intent(this, ModifyCountryActivity.class);
+            startActivity(add_mem);
+        }*/
         return super.onOptionsItemSelected(item);
     }
 

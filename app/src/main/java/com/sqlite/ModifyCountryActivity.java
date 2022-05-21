@@ -7,17 +7,15 @@ package com.sqlite;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-import androidx.cardview.widget.CardView;
+import android.widget.*;
 
 public class ModifyCountryActivity extends Activity implements OnClickListener {
 
     private EditText descText, colorText, fuelText, yearText, costText;
-    private Button updateBtn, deleteBtn, cardsbtn;
+    private Button updateBtn, deleteBtn;
 
 
 
@@ -29,12 +27,6 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        cardsbtn.findViewById(R.id.cardbtn);
-        cardsbtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                setContentView(R.layout.activity_modify_record);
-            }
-        });
 
         setTitle("Modify Record");
 
@@ -70,7 +62,16 @@ public class ModifyCountryActivity extends Activity implements OnClickListener {
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
     }
-
+    public void showToast(View view) {
+        Toast toast3 = Toast.makeText(getApplicationContext(),
+                R.string.Success, Toast.LENGTH_LONG);
+        toast3.setGravity(Gravity.CENTER, 0, 0);
+        LinearLayout toastContainer = (LinearLayout) toast3.getView();
+        ImageView catImageView = new ImageView(getApplicationContext());
+        catImageView.setImageResource(R.drawable.check);
+        toastContainer.addView(catImageView, 0);
+        toast3.show();
+    }
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

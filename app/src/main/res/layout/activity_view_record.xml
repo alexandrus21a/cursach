@@ -1,133 +1,124 @@
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/card_viewthis"
-        android:layout_width="348.26sp"
-        android:layout_height="186sp"
-        android:layout_marginTop="92dp"
-        android:background="@color/primarybasic"
-        android:color="@color/primarybasic"
-        app:cardCornerRadius="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        android:clickable="true"
-    android:foreground="?android:attr/selectableItemBackground"
-        android:gravity="center">
+        android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/primarybasic"
-            android:color="@color/primarycol"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-        <ImageView
-                android:id="@+id/imageView_flag"
-                android:layout_width="280.26sp"
-                android:layout_height="156.67sp"
-                android:layout_marginStart="124dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@raw/img_1"
-                tools:ignore="VectorDrawableCompat"
-                app:layout_constraintBottom_toBottomOf="parent" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/shape1">
 
-        <TextView
-                android:textColor="@color/colortext"
-                android:id="@+id/title"
-                android:layout_width="232dp"
-                android:layout_height="40dp"
-                android:text="Mitsubishu"
-                android:textSize="22sp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp"
-                android:layout_marginStart="16dp" />
+            <ImageView
+                    android:id="@+id/imageView_flag"
+                    android:layout_width="280.26sp"
+                    android:layout_height="156.67sp"
+                    android:layout_marginStart="204dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@raw/img_1"
+                    tools:ignore="VectorDrawableCompat"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:visibility="visible"
+                    app:layout_constraintVertical_bias="0.473" />
 
-        <Button
-                android:text=""
-                android:layout_width="7dp"
-                android:layout_height="186sp"
-                android:radius="0sp"
-                android:id="@+id/button"
-                android:backgroundTint="@color/primarycol"
-                android:background="@color/primarybasic"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/id"
 
-                />
+                    android:textColor="@color/colortext"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView_flag"
+                    android:visibility="visible" />
 
-        <TextView
-                android:textColor="@color/colortext"
-                android:id="@+id/desc"
-                android:layout_width="232dp"
-                android:layout_height="23dp"
-                android:text="Model: Lancer Evolution 7rs"
-                app:layout_constraintEnd_toEndOf="@+id/title"
-                app:layout_constraintTop_toBottomOf="@+id/title" />
+            <TextView
+                    android:id="@+id/title"
+                    android:textColor="@color/colortext"
+                    android:maxLines="1"
+                    android:padding="3dp"
+                    android:textStyle="bold"
+                    android:layout_width="232dp"
+                    android:layout_height="40dp"
+                    android:text="Mitsubishu"
+                    android:textSize="22sp"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="16dp" />
 
-        <TextView
-                android:textColor="@color/colortext"
-                android:id="@+id/txtcolor"
-                android:layout_width="232dp"
-                android:layout_height="23dp"
-                android:text="Color: Red"
-                app:layout_constraintEnd_toEndOf="@+id/txtfuel"
-                app:layout_constraintStart_toStartOf="@+id/txtfuel"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintTop_toBottomOf="@+id/txtfuel" />
+            <TextView
+                    android:id="@+id/desc"
+                    android:textColor="@color/colortext"
+                    android:layout_below="@id/title"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@id/id"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:padding="3dp"
+                    android:visibility="visible"
+                    android:layout_width="232dp"
+                    android:layout_height="23dp"
+                    android:text="Model: Lancer Evolution 7rs"
+                    app:layout_constraintEnd_toEndOf="@+id/title"
+                    app:layout_constraintTop_toBottomOf="@+id/title" />
 
-        <TextView
-                android:textColor="@color/colortext"
-                android:id="@+id/txtfuel"
-                android:layout_width="232dp"
-                android:layout_height="23dp"
-                android:text="Fuel: Electro"
-                app:layout_constraintEnd_toEndOf="@+id/title"
-                app:layout_constraintStart_toStartOf="@+id/desc"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintTop_toBottomOf="@+id/desc" />
+            <TextView
+                    android:id="@+id/txtxyear"
+                    android:textColor="@color/colortext"
+                    android:layout_below="@id/title"
+                    android:layout_toRightOf="@id/id"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:padding="3dp"
+                    android:visibility="visible"
+                    android:layout_width="232dp"
+                    android:layout_height="23dp"
+                    android:text="Year: 2000"
+                    app:layout_constraintTop_toBottomOf="@+id/txtcolor"
+                    app:layout_constraintEnd_toEndOf="@+id/txtcolor"
+                    app:layout_constraintStart_toStartOf="@+id/txtcolor" />
 
-        <TextView
-                android:textColor="@color/colortext"
-                android:id="@+id/txtxyear"
-                android:layout_width="232dp"
-                android:layout_height="23dp"
-                android:text="Year: 2000"
-                app:layout_constraintEnd_toEndOf="@+id/txtcolor"
-                app:layout_constraintStart_toStartOf="@+id/txtcolor"
-                app:layout_constraintTop_toBottomOf="@+id/txtcolor"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                    android:id="@+id/txtcolor"
+                    android:textColor="@color/colortext"
 
-        <TextView
-                android:text="TextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/id"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView_flag" />
+                    android:layout_below="@id/title"
+                    android:layout_toRightOf="@id/id"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:padding="3dp"
+                    android:visibility="visible"
+                    android:layout_width="232dp"
+                    android:layout_height="23dp"
+                    android:text="Color: Red"
+                    app:layout_constraintTop_toBottomOf="@+id/txtfuel"
+                    app:layout_constraintEnd_toEndOf="@+id/txtfuel"
+                    app:layout_constraintStart_toStartOf="@+id/txtfuel" />
 
-        <Button
-            android:id="@+id/cardbtn"
+            <TextView
+                    android:id="@+id/txtfuel"
+                    android:textColor="@color/colortext"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:padding="3dp"
+                    android:visibility="visible"
+                    android:layout_width="232dp"
+                    android:layout_height="23dp"
+                    android:text="Fuel: Electro"
+                    app:layout_constraintEnd_toEndOf="@+id/title"
+                    app:layout_constraintStart_toStartOf="@+id/desc"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintTop_toBottomOf="@+id/desc" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
 
-            android:layout_width="104dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="4dp"
-            android:alpha="0.7"
-            android:backgroundTint="@color/primarycol"
-            android:text="Edit"
-            app:layout_constraintBottom_toTopOf="@+id/id"
-            app:layout_constraintEnd_toEndOf="@+id/txtxyear"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/txtxyear"
-            app:layout_constraintTop_toBottomOf="@+id/txtxyear"
-            app:layout_constraintVertical_bias="0.222" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.cardview.widget.CardView>
+</RelativeLayout>
