@@ -10,8 +10,8 @@
 
     <ImageView
             android:id="@+id/imageView_flag"
-            android:layout_width="179dp"
-            android:layout_height="81dp"
+            android:layout_width="225dp"
+            android:layout_height="135dp"
             android:layout_gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -19,34 +19,40 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.517"
-            app:srcCompat="@mipmap/img_1" />
+            android:src="@mipmap/img_1" />
 
     <EditText
-            android:id="@+id/subject_edittext"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/subject_edittext"
             android:ems="10"
             android:hint="@string/enter_name"
+            android:layout_marginTop="25sp"
+            android:padding="10sp"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
-            android:layout_height="35dp"
             android:background="@drawable/shape"></EditText>
 
     <EditText
-        android:id="@+id/description_edittext"
-        android:layout_width="match_parent"
-        android:layout_height="35dp"
-        android:background="@drawable/shape"
-        android:ems="10"
-        android:hint="@string/enter_desc"
-        android:textColor="@color/colortext"
-        android:textColorHint="@color/colortext"></EditText>
+            android:id="@+id/description_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape"
+            android:ems="10"
+            android:layout_marginTop="5sp"
+            android:padding="10sp"
+            android:hint="@string/enter_desc"
+            android:textColor="@color/colortext"
+            android:textColorHint="@color/colortext"></EditText>
 
     <EditText
             android:id="@+id/color1"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Color"
+            android:layout_marginTop="5sp"
+            android:padding="10sp"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
             android:background="@drawable/shape"></EditText>
@@ -54,9 +60,11 @@
     <EditText
             android:id="@+id/Body_type1"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Body Type"
+            android:layout_marginTop="5sp"
+            android:padding="10sp"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
             android:background="@drawable/shape"></EditText>
@@ -64,8 +72,10 @@
     <EditText
             android:id="@+id/Country_of_origin1"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginTop="5sp"
+            android:padding="10sp"
             android:hint="Country of origin"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
@@ -74,8 +84,10 @@
     <EditText
             android:id="@+id/Drive_type1"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginTop="5sp"
+            android:padding="10sp"
             android:hint="Drive type"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
@@ -84,8 +96,10 @@
     <EditText
             android:id="@+id/Fuel_type1"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginTop="5sp"
+            android:padding="10sp"
             android:hint="Fuel type"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
@@ -94,8 +108,10 @@
     <EditText
             android:id="@+id/Type_of_gearbox1"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:ems="10"
+            android:layout_marginTop="5sp"
+            android:padding="10sp"
             android:hint="Type of gearbox"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
@@ -104,9 +120,11 @@
     <EditText
             android:id="@+id/Year1"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Year"
+            android:layout_marginTop="5sp"
+            android:padding="10sp"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
             android:background="@drawable/shape"></EditText>
@@ -114,15 +132,20 @@
     <EditText
             android:id="@+id/Cost1"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Cost"
+            android:layout_marginTop="5sp"
+            android:padding="10sp"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
             android:background="@drawable/shape"></EditText>
 
     <Button
             android:id="@+id/add_record"
+            android:textSize="22sp"
+            android:backgroundTint="@color/primarycol"
+            android:textColor="@color/colortext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

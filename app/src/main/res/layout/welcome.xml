@@ -72,7 +72,6 @@
             android:backgroundTint="@color/primarycol"
             android:textColor="@color/colortext"
             android:text="@string/welcomebtn"
-
             android:layout_marginHorizontal="100sp"
             app:cornerRadius="15sp"
             android:textSize="20sp"
@@ -87,8 +86,6 @@
             android:backgroundTint="@color/primarybasic"
             android:textColor="@color/sectext"
             android:layout_marginHorizontal="80sp"
-            android:textSize="8sp"
-
             android:layout_marginBottom="80sp"
             android:layout_marginTop="10dp"
             android:layout_below="@+id/main_btn" />

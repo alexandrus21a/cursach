@@ -60,11 +60,11 @@ public class CountryListActivity extends AppCompatActivity {
 
 
                 String id = idTextView.getText().toString();
-                String title ="Vendor:"+ titleTextView.getText().toString();
-                String desc = "Vendor:"+descTextView.getText().toString();
-                String txtcolor ="Color:" +Colortxt.getText().toString();
-                String txtfuel = "Fuel:"+fueltext.getText().toString();
-                String txtxyear ="Year:"+ yeartext.getText().toString();
+                String title =titleTextView.getText().toString();
+                String desc = descTextView.getText().toString();
+                String txtcolor =Colortxt.getText().toString();
+                String txtfuel = fueltext.getText().toString();
+                String txtxyear = yeartext.getText().toString();
 
 
                 Intent modify_intent = new Intent(getApplicationContext(), ModifyCountryActivity.class);
