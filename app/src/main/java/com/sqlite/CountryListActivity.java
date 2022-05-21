@@ -16,6 +16,7 @@ import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
 public class CountryListActivity extends AppCompatActivity {
 
+
     private DBManager dbManager;
 
     private ListView listView;

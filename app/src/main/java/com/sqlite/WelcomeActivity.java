@@ -1,5 +1,6 @@
 package com.sqlite;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -8,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 public class WelcomeActivity extends AppCompatActivity {
-
     private Button main_btn;
     private Button sup_btn;
 
@@ -23,7 +23,11 @@ public class WelcomeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+<<<<<<< Updated upstream
                 setContentView(R.layout.activity_view_record);
+=======
+                startActivity(new Intent(v.getContext(), CountryListActivity.class));
+>>>>>>> Stashed changes
             }
         });
 
@@ -32,7 +36,11 @@ public class WelcomeActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+<<<<<<< Updated upstream
                 setContentView(R.layout.activity_view_record);
+=======
+                startActivity(new Intent(v.getContext(), CountryListActivity.class));
+>>>>>>> Stashed changes
             }
         });
 
