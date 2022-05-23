@@ -1,4 +1,5 @@
 package com.sqlite;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,12 +9,10 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-
 public class AddCountryActivity extends Activity implements OnClickListener {
 
     private Button addTodoBtn;
     private EditText subjectEditText, descEditText, colorEdit, bodytypeEdit, countryEdit, driveEdit, fuelEdit, gearboxEdit, yearEdit, costEdit;
-
     private DBManager dbManager;
 
     @Override
@@ -33,7 +32,6 @@ public class AddCountryActivity extends Activity implements OnClickListener {
         gearboxEdit = (EditText) findViewById(R.id.Type_of_gearbox1);
         yearEdit = (EditText) findViewById(R.id.Year1);
         costEdit = (EditText) findViewById(R.id.Cost1);
-
         addTodoBtn = (Button) findViewById(R.id.add_record);
 
         dbManager = new DBManager(this);

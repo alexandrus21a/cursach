@@ -32,7 +32,7 @@
                     android:layout_marginStart="124dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@raw/img_1"
+                    android:src="@drawable/car"
                     tools:ignore="VectorDrawableCompat"
                     app:layout_constraintBottom_toBottomOf="parent" />
 

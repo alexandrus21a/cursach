@@ -24,7 +24,7 @@
                     android:layout_marginStart="204dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@raw/img_1"
+                    android:src="@drawable/car"
                     tools:ignore="VectorDrawableCompat"
                     app:layout_constraintBottom_toBottomOf="parent"
                     android:visibility="visible"
@@ -119,6 +119,23 @@
                     app:layout_constraintStart_toStartOf="@+id/desc"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintTop_toBottomOf="@+id/desc" />
+
+            <TextView
+                    android:id="@+id/txtcost"
+                    android:layout_width="232dp"
+                    android:layout_height="23dp"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:padding="3dp"
+                    android:text="Cost: 000001"
+                    android:textColor="@color/colortext"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/title"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/desc"
+                    app:layout_constraintTop_toBottomOf="@+id/txtxyear"
+                    app:layout_constraintVertical_bias="0.0" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 

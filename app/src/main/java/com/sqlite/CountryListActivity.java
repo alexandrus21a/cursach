@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -24,11 +23,10 @@ public class CountryListActivity extends AppCompatActivity {
     private ListView listView;
 
     private SimpleCursorAdapter adapter;
-    private Button cardsbtn;
 
-    final String[] from = new String[]{DatabaseHelper.CAR_ID, DatabaseHelper.VENDOR, DatabaseHelper.MODEL, DatabaseHelper.COLOR, DatabaseHelper.FUEL_TYPE, DatabaseHelper.YEAR};
+    final String[] from = new String[]{DatabaseHelper.CAR_ID, DatabaseHelper.VENDOR, DatabaseHelper.MODEL, DatabaseHelper.COLOR, DatabaseHelper.FUEL_TYPE, DatabaseHelper.YEAR, DatabaseHelper.COST};
 
-    final int[] to = new int[]{R.id.id, R.id.title, R.id.desc, R.id.txtcolor, R.id.txtfuel, R.id.txtxyear};
+    final int[] to = new int[]{R.id.id, R.id.title, R.id.desc, R.id.txtcolor, R.id.txtfuel, R.id.txtxyear, R.id.txtcost};
     private View v;
 
     @Override
@@ -57,6 +55,7 @@ public class CountryListActivity extends AppCompatActivity {
                 TextView Colortxt = (TextView) view.findViewById(R.id.txtcolor);
                 TextView fueltext = (TextView) view.findViewById(R.id.txtfuel);
                 TextView yeartext =(TextView) view.findViewById(R.id.txtxyear);
+                TextView costtext =(TextView) view.findViewById(R.id.txtcost);
 
 
                 String id = idTextView.getText().toString();
@@ -65,7 +64,7 @@ public class CountryListActivity extends AppCompatActivity {
                 String txtcolor =Colortxt.getText().toString();
                 String txtfuel = fueltext.getText().toString();
                 String txtxyear = yeartext.getText().toString();
-
+                String txtcost = costtext.getText().toString();
 
                 Intent modify_intent = new Intent(getApplicationContext(), ModifyCountryActivity.class);
                 modify_intent.putExtra("title", title);
@@ -74,15 +73,11 @@ public class CountryListActivity extends AppCompatActivity {
                 modify_intent.putExtra("txtcolor", txtcolor);
                 modify_intent.putExtra("txtfuel", txtfuel);
                 modify_intent.putExtra("txtxyear", txtxyear);
+                modify_intent.putExtra("txtcost",txtcost);
                 startActivity(modify_intent);
             }
         });
-        /*findViewById(R.id.cardviewthis).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ModifyCountryActivity.class));
-            }
-        });*/
+
     }
 
 
@@ -99,10 +94,7 @@ public class CountryListActivity extends AppCompatActivity {
 
             Intent add_mem = new Intent(this, AddCountryActivity.class);
             startActivity(add_mem);
-        }/*if (id == R.id.cardbtn){
-            Intent add_mem = new Intent(this, ModifyCountryActivity.class);
-            startActivity(add_mem);
-        }*/
+        }
         return super.onOptionsItemSelected(item);
     }
 
