@@ -24,8 +24,8 @@ dependencies {
 ### worklist procces
 - [x] database
 - [x] code(+-)
-- [ ] gui
-- [ ] app
+- [x] gui
+- [x] app
 
 
 ```

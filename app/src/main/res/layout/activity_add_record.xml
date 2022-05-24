@@ -8,8 +8,9 @@
         android:padding="20dp"
         android:background="@color/primarybasic">
 
+
     <ImageView
-            android:id="@+id/imageView_flag"
+            android:id="@+id/imageView_Car"
             android:layout_width="225dp"
             android:layout_height="135dp"
             android:layout_gravity="center"
@@ -19,7 +20,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.517"
-            android:src="@drawable/car" />
+            android:src="@drawable/carvec" />
 
     <EditText
             android:layout_width="match_parent"
@@ -31,13 +32,13 @@
             android:padding="10sp"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
-            android:background="@drawable/shape"></EditText>
+            android:background="@drawable/inputbg"></EditText>
 
     <EditText
             android:id="@+id/description_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/shape"
+            android:background="@drawable/inputbg"
             android:ems="10"
             android:layout_marginTop="5sp"
             android:padding="10sp"
@@ -55,7 +56,7 @@
             android:padding="10sp"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
-            android:background="@drawable/shape"></EditText>
+            android:background="@drawable/inputbg"></EditText>
 
     <EditText
             android:id="@+id/Body_type1"
@@ -67,7 +68,7 @@
             android:padding="10sp"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
-            android:background="@drawable/shape"></EditText>
+            android:background="@drawable/inputbg"></EditText>
 
     <EditText
             android:id="@+id/Country_of_origin1"
@@ -79,7 +80,7 @@
             android:hint="Country of origin"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
-            android:background="@drawable/shape"></EditText>
+            android:background="@drawable/inputbg"></EditText>
 
     <EditText
             android:id="@+id/Drive_type1"
@@ -91,7 +92,7 @@
             android:hint="Drive type"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
-            android:background="@drawable/shape"></EditText>
+            android:background="@drawable/inputbg"></EditText>
 
     <EditText
             android:id="@+id/Fuel_type1"
@@ -103,7 +104,7 @@
             android:hint="Fuel type"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
-            android:background="@drawable/shape"></EditText>
+            android:background="@drawable/inputbg"></EditText>
 
     <EditText
             android:id="@+id/Type_of_gearbox1"
@@ -115,7 +116,7 @@
             android:hint="Type of gearbox"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
-            android:background="@drawable/shape"></EditText>
+            android:background="@drawable/inputbg"></EditText>
 
     <EditText
             android:id="@+id/Year1"
@@ -127,7 +128,7 @@
             android:padding="10sp"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
-            android:background="@drawable/shape"></EditText>
+            android:background="@drawable/inputbg"></EditText>
 
     <EditText
             android:id="@+id/Cost1"
@@ -139,7 +140,7 @@
             android:padding="10sp"
             android:textColor="@color/colortext"
             android:textColorHint="@color/colortext"
-            android:background="@drawable/shape"></EditText>
+            android:background="@drawable/inputbg"></EditText>
 
     <Button
             android:id="@+id/add_record"

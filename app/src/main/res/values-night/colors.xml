@@ -3,6 +3,6 @@
     <color name="primarycol">#F49817</color>
     <color name="primarybasic">#000</color>
     <color name="colortext">#fff</color>
-    <color name="icon">#000</color>
+    <color name="icon">#fff</color>
     <color name="sectext">#8CFFFFFF</color>
 </resources>

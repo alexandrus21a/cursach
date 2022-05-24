@@ -19,15 +19,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-                android:name="com.sqlite.CountryListActivity"
+
+        <activity android:theme="@style/Theme.AppCompat.DayNight"
+                android:name="com.sqlite.CarListActivity"
                 android:label="@string/app_name" />
-        <activity android:theme="@style/Theme.AppCompat.DayNight.FullScreen"
-                android:name="com.sqlite.ModifyCountryActivity"
+        <activity android:theme="@style/Theme.AppCompat.DayNight"
+                android:name="com.sqlite.ModifyCarActivity"
                 android:label="@string/app_name" />
 
-        <activity android:theme="@style/Theme.AppCompat.DayNight.FullScreen"
-                android:name="com.sqlite.AddCountryActivity"
+        <activity android:theme="@style/Theme.AppCompat.DayNight"
+                android:name="com.sqlite.AddCarActivity"
                 android:label="@string/app_name" />
     </application>
 
