@@ -1,6 +1,6 @@
 package com.sqlite;
 
-// This is importing the necessary libraries for the activity to work.
+// Це імпорт необхідних бібліотек для роботи діяльності.
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,29 +8,23 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-
-
-// This is the class that is being created. It is extending the Activity class and implementing the
+// Це клас, який створюється. Він розширює клас Activity та реалізує
 // OnClickListener.
 public class AddCarActivity extends Activity implements OnClickListener {
-
-    // Declaring the variables that are used in the activity.
+    // Оголошення змінних, які використовуються в дії.
     private Button addTodoBtn;
     private EditText subjectEditText, descEditText, colorEdit, bodytypeEdit, countryEdit, driveEdit, fuelEdit, gearboxEdit, yearEdit, costEdit;
     private DBManager dbManager;
-
-    // This is the method that is called when the activity is created. It is calling the super class
-    //         onCreate method and passing the savedInstanceState.
+    // Це метод, який викликається під час створення дії. Це викликає суперклас
+    // метод onCreate і передача savedInstanceState.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // Setting the title of the activity to "Add Record".
+        // Установлення назви діяльності на «Додати запис».
         setTitle("Add Record");
-
-        // Setting the layout of the activity to the activity_add_record.xml file.
+        // Налаштування макета діяльності у файлі activity_add_record.xml.
         setContentView(R.layout.activity_add_record);
-        // This is declaring the variables that are used in the activity.
+        // Це оголошення змінних, які використовуються в дії.
         subjectEditText = (EditText) findViewById(R.id.subject_edittext);
         descEditText = (EditText) findViewById(R.id.description_edittext);
         colorEdit = (EditText) findViewById(R.id.color1);
@@ -42,24 +36,22 @@ public class AddCarActivity extends Activity implements OnClickListener {
         yearEdit = (EditText) findViewById(R.id.Year1);
         costEdit = (EditText) findViewById(R.id.Cost1);
         addTodoBtn = (Button) findViewById(R.id.add_record);
-
-        // Creating a new instance of the DBManager class.
+        // Створення нового екземпляра класу DBManager.
         dbManager = new DBManager(this);
-        // Opening the database.
+        // Відкриття бази даних.
         dbManager.open();
-        // Setting the onClickListener to the addTodoBtn button.
+        // Налаштування onClickListener на кнопку addTodoBtn.
         addTodoBtn.setOnClickListener(this);
     }
-
-    // This is the method that is called when the button is clicked. It is checking the id of the
-    //         button that is clicked and then performing the appropriate action.
+    // Це метод, який викликається при натисканні кнопки. Він перевіряє ідентифікатор
+    // кнопка, яку клацають, а потім виконують відповідну дію.
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            // Checking the id of the button that is clicked and then performing the appropriate
-            // action.
+            // Перевірка ідентифікатора кнопки, яку було натиснуто, а потім виконання відповідного
+            // дія.
             case R.id.add_record:
-                // Getting the text from the EditText fields and converting them to strings.
+                // Отримання тексту з полів EditText і перетворення їх у рядки.
                 final String name = subjectEditText.getText().toString();
                 final String desc = descEditText.getText().toString();
                 final String txtcolor =colorEdit.getText().toString();
@@ -70,14 +62,12 @@ public class AddCarActivity extends Activity implements OnClickListener {
                 final String txtgearbox =gearboxEdit.getText().toString();
                 final String txtyear =yearEdit.getText().toString();
                 final String txtcost =costEdit.getText().toString();
-                // Inserting the data into the database.
+                // Вставка даних у базу даних.
                 dbManager.insert( name, desc, txtcolor, txtbodytype, txtcountry, txtdrive, txtfuel, txtgearbox, txtyear, txtcost);
-
-                // Creating a new intent and setting the flags to clear the top.
+                // Створення нового наміру та встановлення прапорів для очищення верхньої частини.
                 Intent main = new Intent(AddCarActivity.this, CarListActivity.class)
                         .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-                // Starting the activity.
+                // Початок діяльності.
                 startActivity(main);
                 break;
         }

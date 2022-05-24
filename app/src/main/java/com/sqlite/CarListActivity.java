@@ -1,6 +1,6 @@
 package com.sqlite;
 
-// The above code is importing the necessary libraries for the application to run.
+// Наведений вище код імпортує необхідні бібліотеки для запуску програми.
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -16,56 +16,51 @@ import androidx.cursoradapter.widget.SimpleCursorAdapter;
 
 
 /**
- * This class is a subclass of the AppCompatActivity class.
+ * Цей клас є підкласом класу AppCompatActivity.
  */
 public class CarListActivity extends AppCompatActivity {
 
 
-    // Creating a new instance of the DBManager class.
+    // Створення нового екземпляра класу DBManager.
     private DBManager dbManager;
 
-    // Creating a new instance of the ListView class.
+    // Створення нового екземпляра класу ListView.
     private ListView listView;
 
-    // This is a method that is used to notify the adapter that the data has changed.
+    // Це метод, який використовується для повідомлення адаптера про зміну даних.
     private SimpleCursorAdapter adapter;
 
-    // This is a string array that is used to store the column names of the database.
+    // Це масив рядків, який використовується для зберігання імен стовпців бази даних.
     final String[] from = new String[]{DatabaseHelper.CAR_ID, DatabaseHelper.VENDOR, DatabaseHelper.MODEL, DatabaseHelper.COLOR, DatabaseHelper.FUEL_TYPE, DatabaseHelper.YEAR, DatabaseHelper.COST};
     final int[] to = new int[]{R.id.id, R.id.title, R.id.desc, R.id.txtcolor, R.id.txtfuel, R.id.txtxyear, R.id.txtcost};
-    // This is a variable that is used to store the view.
+    // Це змінна, яка використовується для зберігання представлення.
     private View v;
-
-    // This is a method that is used to create the activity.
+    // Це метод, який використовується для створення діяльності.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // This is a method that is used to set the content view of the activity.
+        // Це метод, який використовується для встановлення перегляду вмісту діяльності.
         setContentView(R.layout.fragment_emp_list);
-
-        // This is creating a new instance of the DBManager class.
+        // Це створює новий екземпляр класу DBManager.
         dbManager = new DBManager(this);
-        // Opening the database.
+        // Відкриття бази даних.
         dbManager.open();
-        // This is a method that is used to fetch the data from the database.
+        // Це метод, який використовується для отримання даних з бази даних.
         Cursor cursor = dbManager.fetch();
-
-        // This is a method that is used to find the view by its id.
+        // Це метод, який використовується для пошуку представлення за його ідентифікатором.
         listView = (ListView) findViewById(R.id.list_view);
-        // This is a method that is used to set the empty view of the list.
+        // Це метод, який використовується для встановлення пустого перегляду списку.
         listView.setEmptyView(findViewById(R.id.empty));
-
+        // Це метод, який використовується для повідомлення адаптера про зміну даних.
         adapter = new SimpleCursorAdapter(this, R.layout.activity_view_record, cursor, from, to, 0);
-        // This is a method that is used to notify the adapter that the data has changed.
         adapter.notifyDataSetChanged();
-
         listView.setAdapter(adapter);
-        // OnCLickListiner For List Items
+        // OnCLickListiner для елементів списку
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            // This is a method that is used to set the on click listener for the list view.
+            // Це метод, який використовується для встановлення прослуховування при натисканні для перегляду списку.
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long viewId) {
-                // This is a method that is used to find the view by its id.
+                // Це метод, який використовується для пошуку представлення за його ідентифікатором.
                 TextView idTextView = (TextView) view.findViewById(R.id.id);
                 TextView titleTextView = (TextView) view.findViewById(R.id.title);
                 TextView descTextView = (TextView) view.findViewById(R.id.desc);
@@ -73,9 +68,7 @@ public class CarListActivity extends AppCompatActivity {
                 TextView fueltext = (TextView) view.findViewById(R.id.txtfuel);
                 TextView yeartext =(TextView) view.findViewById(R.id.txtxyear);
                 TextView costtext =(TextView) view.findViewById(R.id.txtcost);
-
-
-                // This is a method that is used to get the text from the text view.
+                // Це метод, який використовується для отримання тексту з текстового перегляду.
                 String id = idTextView.getText().toString();
                 String title =titleTextView.getText().toString();
                 String desc = descTextView.getText().toString();
@@ -83,10 +76,9 @@ public class CarListActivity extends AppCompatActivity {
                 String txtfuel = fueltext.getText().toString();
                 String txtxyear = yeartext.getText().toString();
                 String txtcost = costtext.getText().toString();
-
-                // This is creating a new intent that is used to start the ModifyCarActivity class.
+                // Це створює новий намір, який використовується для запуску класу ModifyCarActivity.
                 Intent modify_intent = new Intent(getApplicationContext(), ModifyCarActivity.class);
-                // This is a method that is used to put the extra data into the intent.
+                // Це метод, який використовується для розміщення додаткових даних у intent.
                 modify_intent.putExtra("title", title);
                 modify_intent.putExtra("desc", desc);
                 modify_intent.putExtra("id", id);
@@ -94,7 +86,7 @@ public class CarListActivity extends AppCompatActivity {
                 modify_intent.putExtra("txtfuel", txtfuel);
                 modify_intent.putExtra("txtxyear", txtxyear);
                 modify_intent.putExtra("txtcost",txtcost);
-                // This is a method that is used to start the activity.
+                // Це метод, який використовується для початку дії.
                 startActivity(modify_intent);
             }
         });
@@ -102,26 +94,26 @@ public class CarListActivity extends AppCompatActivity {
     }
 
 
-    // This is a method that is used to create the options menu.
+    // Це метод, який використовується для створення меню параметрів.
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
-    // This is a method that is used to create the options menu.
+    // Це метод, який використовується для створення меню параметрів.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        // This is a method that is used to get the id of the item.
+        // Це метод, який використовується для отримання ідентифікатора елемента.
         int id = item.getItemId();
         if (id == R.id.add_record) {
 
-            // This is creating a new intent that is used to start the AddCarActivity class.
+            // Це створює новий намір, який використовується для запуску класу AddCarActivity.
             Intent add_mem = new Intent(this, AddCarActivity.class);
             startActivity(add_mem);
         }
-        // This is a method that is used to return the item that is selected.
+        // Це метод, який використовується для повернення вибраного елемента.
         return super.onOptionsItemSelected(item);
     }
 

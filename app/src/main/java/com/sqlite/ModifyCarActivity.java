@@ -1,7 +1,7 @@
 package com.sqlite;
 
 
-// This is importing the necessary libraries for the activity to work.
+// Це імпорт необхідних бібліотек для роботи діяльності.
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,11 +11,11 @@ import android.view.View.OnClickListener;
 import android.widget.*;
 
 /**
- * This class is an activity that allows the user to modify a car
+ * Цей клас – це діяльність, яка дозволяє користувачеві модифікувати автомобіль
  */
 public class ModifyCarActivity extends Activity implements OnClickListener {
 
-    // This is declaring the variables that will be used in the activity.
+    // Це оголошення змінних, які будуть використані в дії.
     private EditText descText, colorText, fuelText, yearText, costText;
     private TextView descTextView, colorTextView, fuelTextView, yearTextView,textsd;
     private Button updateBtn, deleteBtn;
@@ -26,22 +26,22 @@ public class ModifyCarActivity extends Activity implements OnClickListener {
     private DBManager dbManager;
 
     @Override
-    // This is the method that is called when the activity is created.
+    // Це метод, який викликається під час створення дії.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
 
-        // This is setting the title of the activity.
+        // Це встановлення назви діяльності.
         setTitle("Modify Record");
 
-        // Setting the layout of the activity.
+        // Налаштування макета діяльності.
         setContentView(R.layout.activity_modify_record);
 
-        // This is creating a new instance of the DBManager class.
+        // Це створює новий екземпляр класу DBManager.
         dbManager = new DBManager(this);
-        // Opening the database.
+        // Відкриття бази даних.
         dbManager.open();
-        // This is declaring the variables that will be used in the activity.
+        // Це оголошення змінних, які будуть використані в дії.
         textsd= (TextView) findViewById(R.id.title);
         descText = (EditText) findViewById(R.id.description_edittext);
         updateBtn = (Button) findViewById(R.id.btn_update);
@@ -54,7 +54,7 @@ public class ModifyCarActivity extends Activity implements OnClickListener {
         colorTextView = (TextView) findViewById(R.id.txtcolor);
         fuelTextView = (TextView) findViewById(R.id.txtfuel);
         yearTextView = (TextView) findViewById(R.id.txtxyear);
-        // This is getting the intent that was passed to the activity.
+        // Це отримання наміру, який був переданий діяльності.
         Intent intent = getIntent();
         String id = intent.getStringExtra("id");
         String title = intent.getStringExtra("title");
@@ -63,8 +63,7 @@ public class ModifyCarActivity extends Activity implements OnClickListener {
         String txtfuel = intent.getStringExtra("txtfuel");
         String txtyear = intent.getStringExtra("txtyear");
         String txtcost = intent.getStringExtra("txtcost");
-
-        // This is getting the intent that was passed to the activity.
+        // Це отримання наміру, який був переданий діяльності.
         _id = Long.parseLong(id);
         textsd.setText(title);
         descText.setText(desc);
@@ -79,33 +78,31 @@ public class ModifyCarActivity extends Activity implements OnClickListener {
         updateBtn.setOnClickListener(this);
         deleteBtn.setOnClickListener(this);
     }
-
     /**
-     * It shows a toast message with an image.
-     *
-     * @param view The view to find a parent from.
+     * Показує тост із зображенням.
      */
+
     public void showToast(View view) {
-        // Creating a toast message.
+        // Створення тостового повідомлення.
         Toast toast3 = Toast.makeText(getApplicationContext(),
                 R.string.Success, Toast.LENGTH_LONG);
-        // This is setting the gravity of the toast message to the center of the screen.
+        // Це встановлення тяжкості повідомлення тосту в центрі екрана.
         toast3.setGravity(Gravity.CENTER, 0, 0);
         LinearLayout toastContainer = (LinearLayout) toast3.getView();
-        // Adding an image to the toast message.
+        // Додавання зображення до повідомлення про тост.
         ImageView carImageView = new ImageView(getApplicationContext());
         carImageView.setImageResource(R.drawable.check);
         toastContainer.addView(carImageView, 0);
-        // Showing the toast message.
+        // Показ повідомлення про тост.
         toast3.show();
     }
 
-    // This is overriding the onClick method.
+    // Це перевизначає метод onClick.
     @Override
     public void onClick(View v) {
-        // This is a switch statement that is checking the id of the button that was clicked. If the id
-        // is the update button, it will update the car in the database. If the id is the delete
-        // button, it will delete the car from the database.
+        // Це оператор switch, який перевіряє ідентифікатор кнопки, яку було натиснуто. Якщо ідентифікатор
+        // це кнопка оновлення, вона оновить автомобіль в базі даних. Якщо ідентифікатор - це видалення
+        // кнопка видалить автомобіль з бази даних.
         switch (v.getId()) {
             case R.id.btn_update:
                 String desc = descText.getText().toString();
@@ -125,7 +122,7 @@ public class ModifyCarActivity extends Activity implements OnClickListener {
         }
     }
 
-    // This method is returning the user to the home screen.
+    // Цей метод повертає користувача на головний екран.
     public void returnHome() {
         Intent home_intent = new Intent(getApplicationContext(), CarListActivity.class)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

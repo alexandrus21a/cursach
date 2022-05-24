@@ -1,17 +1,17 @@
 package com.sqlite;
 
-// Importing the necessary classes to create a database.
+// Імпорт необхідних класів для створення бази даних.
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
 /**
- * > This class is a helper class that extends the SQLiteOpenHelper class
+ * > Цей клас є допоміжним класом, який розширює клас SQLiteOpenHelper
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    // This is a constant string that is used to create a table in the database.
+    // Це постійний рядок, який використовується для створення таблиці в базі даних.
     public static final String TABLE_NAME = "avto1d";
     public static final String CAR_ID = "_id";
     public static final String VENDOR = "Vendor";
@@ -26,14 +26,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String COST = "Cost";
 
 
-    // This is a constant string that is used to create a database.
+    // Це постійний рядок, який використовується для створення бази даних.
     static final String DB_NAME = "avto1.db";
     static final int DB_VERSION = 1;
 
 
-    // This is a constant string that is used to create a table in the database.
+    // Це постійний рядок, який використовується для створення таблиці в базі даних.
     private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + CAR_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + VENDOR + " varchar(255), " + MODEL + " varchar(255), " + COLOR + " varchar(255), " + BODY_TYPE + " varchar(255), " + FUEL_TYPE + " varchar(255), " + DRIVE_TYPE + " varchar(255), " + TYPE_OF_GEARBOX + " varchar(255), " + COUNTRY_OF_ORIGIN + " varchar(255), " + YEAR + " int(4),  " + COST + " int(11));";
-    // This is a constant string that is used to insert data into a table in the database.
+    // Це постійний рядок, який використовується для вставки даних у таблицю бази даних.
     private static final String INSERT_TABLE = "insert into 'avto1d' ('Body', 'Color', 'Cost', 'Country', 'Drive', 'Fuel', 'Model', 'Type', 'Vendor', 'Year', '_id') values" +
             " ('Хетчбек', 'Grey', 40000, 'Germany', 'AWD', 'Бензин', 'Golf', 'manual transmission', 'Volkswagen', 2020, 0),\n"+
             " ('Universal', 'Narda Grey', 70000, 'Germany', 'AWD', 'Бензин', 'RS6', 'automatic transmission', 'Audi', 2015, 1),\n" +
@@ -61,24 +61,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             " ('SUV', 'Black', 130000, 'Germany', 'AWD', 'Бензин', 'G500', 'automatic transmission', 'Mercedes', 1998, 23),\n" +
             " ('Купе', 'Khaki', 1900000, 'France', 'RWD', 'Бензин', 'Venom F5', 'automatic transmission', 'Hennessey', 2021, 24);";
 
-    // This is a constructor that is used to create a database.
+    // Це конструктор, який використовується для створення бази даних.
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
     @Override
-    // This method is used to create a table in the database.
+    // Цей метод використовується для створення таблиці в базі даних.
     public void onCreate(SQLiteDatabase db) {
-        // This method is used to create a table in the database.
+        // Цей метод використовується для створення таблиці в базі даних.
         db.execSQL(CREATE_TABLE);
-        // This method is used to insert data into a table in the database.
+        // Цей метод використовується для вставки даних у таблицю бази даних.
         db.execSQL(INSERT_TABLE);
         System.out.println("Created table");
     }
 
     @Override
-    // This method is used to update the database.
+    // Цей метод використовується для оновлення бази даних.
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // This method is used to delete a table in the database.
+        // Цей метод використовується для видалення таблиці в базі даних.
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
         onCreate(db);
     }
