@@ -24,8 +24,6 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
-    - name: accept license
-      run: yes | ~/Android/Sdk/tools/bin/sdkmanager –licenses
     - name: Build Debug APK
       run: ./gradlew assembleDebug
     - name: Generate version.txt for Hub release
