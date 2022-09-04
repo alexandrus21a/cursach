@@ -22,6 +22,8 @@ jobs:
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+    - name: accept license
+      run: yes | ~/Android/Sdk/tools/bin/sdkmanager –licenses
     - name: Build with Gradle
       run: ./gradlew build
     - name: Build Debug APK
