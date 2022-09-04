@@ -2,6 +2,7 @@ package com.sqlite;
 
 
 // Це імпорт необхідних бібліотек для роботи діяльності.
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -98,6 +99,7 @@ public class ModifyCarActivity extends Activity implements OnClickListener {
     }
 
     // Це перевизначає метод onClick.
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         // Це оператор switch, який перевіряє ідентифікатор кнопки, яку було натиснуто. Якщо ідентифікатор
